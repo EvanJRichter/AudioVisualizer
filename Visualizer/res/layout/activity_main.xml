@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/visualizer2"
+    tools:context="com.evanrichter.visualizer.MainActivity" >
+  	
+   <com.google.ads.AdView android:id="@+id/adView"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         ads:adUnitId="ca-app-pub-4402309743915079/3037814946"
+                         ads:adSize="BANNER"
+                         ads:testDevices="1944CCF2FB0357B9209B918CF63CCF11"
+                         ads:loadAdOnCreate="true"
+                         android:layout_alignParentBottom="true"/>
+   
+   <Spinner
+	    android:id="@+id/visualizer_spinner"
+	    android:layout_width="250dp"
+	    android:layout_height="wrap_content" 
+	    android:layout_above="@id/adView"
+	    android:layout_gravity="center"
+	    android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:textColor="#FFFFFF"
+        android:entries="@array/visualizer_types"
+        android:prompt="@string/visualizer_prompt"/>
+
+    <CheckBox 
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/background"
+        android:textColor="#FFFFFF"
+        android:layout_above="@id/visualizer_spinner"
+        android:onClick="onCheckboxClicked"/>
+    
+    <CheckBox 
+        android:id="@+id/checkbox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wavelength"
+        android:textColor="#FFFFFF"
+        android:layout_above="@id/checkbox"
+        android:onClick="onCheckboxClicked2"/>
+    
+     <Button
+        android:id="@+id/butt_visOne"
+        android:layout_above="@id/checkbox2"
+        android:keepScreenOn="true"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/new_visualizer" 
+        android:layout_gravity="center"
+        android:layout_marginBottom="90dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/buttonbg"
+        android:onClick="newVisualizer"/>
+     
+
+</RelativeLayout>
